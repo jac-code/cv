@@ -33,18 +33,30 @@ window.addEventListener('DOMContentLoaded', event => {
 
 });
 
- /**
-   * Hero type effect
-   */
-  const typed = select('.typed')
-  if (typed) {
-    let typed_strings = typed.getAttribute('data-typed-items')
-    typed_strings = typed_strings.split(',')
-    new Typed('.typed', {
-      strings: typed_strings,
-      loop: true,
-      typeSpeed: 100,
-      backSpeed: 50,
-      backDelay: 2000
-    });
-  }
+
+//   TYPEEFFECT
+
+const text = ['Engineer', 'Developer', 'Hardworker'];
+let count = 0;
+let index = 0;
+let current_text = '';
+let letter = '';
+
+(function type() {
+    if (count == text.length) {
+        count = 0;
+    }
+    
+    current_text = text[count];
+    letter = current_text.slice(0, ++index);
+    
+    document.querySelector('.typing').textContent = letter;
+
+    if (letter.length === current_text.length) {
+        count++;
+        index = 0;
+    }
+
+    setTimeout(type, 400);
+
+}());

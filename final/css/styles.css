@@ -11209,3 +11209,40 @@ section.resume-section .resume-section-content {
     transform: rotate(360deg);
   }
 }
+
+/* TYPEEFFECT */
+
+.intro {
+  color: white;
+  display: flex;
+  /* height: 100vh;
+  background: url("");
+  background-size: cover; */
+}
+
+.intro h4 {
+  color: #bd5d38;
+}
+
+.typing {
+  margin-left: 10px;
+  position: relative;
+}
+
+.typing::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 6%;
+  border-right: 2px solid black;
+  animation: blink 0.5s infinite ease;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
